@@ -1,0 +1,18 @@
+description: ''
+type: object
+properties:
+  logged_in:
+    type: boolean
+  lvl_staff:
+    type: boolean
+  event_staff:
+    type: boolean
+  organizer_staff:
+    type: boolean
+  event_owner:
+    type: boolean
+  permissions:
+    type: array
+    items:
+      type: string
+x-examples: {}

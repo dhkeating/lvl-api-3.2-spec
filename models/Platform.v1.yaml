@@ -1,0 +1,29 @@
+title: Platform
+type: object
+x-tags:
+  - Platforms
+x-examples:
+  PlatformExample:
+    id: 1
+    name: PlayStation 5
+    abbreviation: PS5
+    icon: 'https://storage.googleapis.com/lvl-gg-media/platforms/1/ps4.png'
+properties:
+  id:
+    type: integer
+    minimum: 1
+    example: 1
+  name:
+    type: string
+    maxLength: 32
+    minLength: 1
+    example: PlayStation 5
+  abbreviation:
+    type: string
+    minLength: 1
+    maxLength: 4
+    example: PS5
+  icon:
+    type: string
+    format: uri
+    example: 'https://storage.googleapis.com/lvl-gg-media/platforms/1/ps4.png'

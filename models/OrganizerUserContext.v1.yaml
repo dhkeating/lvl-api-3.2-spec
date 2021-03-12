@@ -1,0 +1,20 @@
+type: object
+description: ''
+properties:
+  logged_in:
+    type: boolean
+  lvl_staff:
+    type: boolean
+  organizer_staff:
+    type: boolean
+  organizer_owner:
+    type: boolean
+  permissions:
+    type: array
+    items:
+      type: string
+      enum:
+        - manage_organizer_events
+        - manage_organizer_news
+readOnly: true
+x-examples: {}

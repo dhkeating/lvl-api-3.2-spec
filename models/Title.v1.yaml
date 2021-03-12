@@ -1,0 +1,55 @@
+title: Title
+type: object
+x-tags:
+  - Titles
+x-examples:
+  example-1:
+    id: 3
+    name: Rocket League
+    short_name: RL
+    genre: SPR
+    icon: 'https://storage.googleapis.com/lvl-gg-media/titles/3/icon/icon.png'
+    card_background: 'https://storage.googleapis.com/lvl-gg-media/titles/3/cardbg/card_background.png'
+    banner: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
+    platforms:
+      - id: 1
+        name: PlayStation 5
+        abbreviation: PS5
+        icon: 'https://storage.googleapis.com/lvl-gg-media/platforms/1/ps4.png'
+properties:
+  id:
+    type: integer
+    minimum: 1
+    example: 3
+  name:
+    type: string
+    minLength: 1
+    maxLength: 32
+    example: Rocket League
+  short_name:
+    type: string
+    maxLength: 8
+    minLength: 1
+    example: RL
+  genre:
+    type: string
+    enum:
+      - FPS
+      - SPR
+    example: SPR
+  icon:
+    type: string
+    format: uri
+    example: 'https://storage.googleapis.com/lvl-gg-media/titles/3/icon/icon.png'
+  card_background:
+    type: string
+    format: uri
+    example: 'https://storage.googleapis.com/lvl-gg-media/titles/3/cardbg/card_background.png'
+  banner:
+    type: string
+    format: uri
+    example: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
+  platforms:
+    type: array
+    items:
+      $ref: ./Platform.v1.yaml

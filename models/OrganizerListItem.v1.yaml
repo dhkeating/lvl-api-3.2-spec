@@ -1,0 +1,18 @@
+title: OrganizerListItem
+type: object
+x-tags:
+  - Organizers
+x-examples: {}
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+    example: Level Gaming
+  abbreviation:
+    type: string
+    example: LVL
+  icon:
+    type: string
+    format: uri

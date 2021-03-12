@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: api
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /titles:
+    post:
+      summary: Create Title
+      tags:
+        - Titles
+      responses: {}
+      operationId: post-titles
+    patch:
+      summary: Update Title
+      tags:
+        - Titles
+      responses: {}
+      operationId: patch-titles
+    get:
+      summary: List Titles
+      tags:
+        - Titles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Title.v1.yaml
+              examples: {}
+      operationId: get-titles
+  '/titles/{title_id}':
+    parameters:
+      - schema:
+          type: string
+        name: title_id
+        in: path
+        required: true
+    get:
+      summary: Retrieve Title
+      tags:
+        - Titles
+      responses:
+        '200':
+          $ref: '#/components/responses/awdaw'
+      operationId: get-titles-title_id
+    patch:
+      summary: Update Title
+      tags:
+        - Titles
+      responses: {}
+      operationId: patch-titles-title_id
+    delete:
+      summary: Remove Title
+      tags:
+        - Titles
+      responses: {}
+      operationId: delete-titles-title_id
+components:
+  schemas: {}
+  responses: {}

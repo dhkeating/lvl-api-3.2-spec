@@ -1,0 +1,18 @@
+description: ''
+type: object
+properties:
+  website_url:
+    type: string
+    format: uri
+  discord_url:
+    type: string
+    format: uri
+  twitter_url:
+    type: string
+    format: uri
+  twitch_url:
+    type: string
+    format: uri
+  youtube_url:
+    type: string
+    format: uri

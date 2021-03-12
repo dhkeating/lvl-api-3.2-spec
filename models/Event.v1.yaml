@@ -1,0 +1,31 @@
+title: Event
+type: object
+x-tags:
+  - Events
+x-examples: {}
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+  organizer:
+    $ref: ./OrganizerListItem.v1.yaml
+  event_type:
+    type: string
+  status:
+    type: string
+  region:
+    type: string
+  description:
+    type: string
+  n_seasons:
+    type: integer
+    minimum: 1
+    readOnly: true
+  title:
+    $ref: ./Title.v1.yaml
+  platform:
+    $ref: ./Platform.v1.yaml
+  user_context:
+    $ref: ./EventUserContext.v1.yaml

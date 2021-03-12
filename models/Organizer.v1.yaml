@@ -1,0 +1,29 @@
+title: Organizer
+type: object
+x-tags:
+  - Organizers
+x-examples: {}
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+    minLength: 1
+    maxLength: 32
+  abbreviation:
+    type: string
+    minLength: 1
+    maxLength: 4
+  icon:
+    type: string
+  description:
+    type: string
+  supported_titles:
+    type: array
+    items:
+      $ref: ./Title.v1.yaml
+  organizer_integrations:
+    $ref: ./OrganizerIntegrations.v1.yaml
+  user_context:
+    $ref: ./OrganizerUserContext.v1.yaml

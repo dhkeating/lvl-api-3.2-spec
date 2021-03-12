@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: Titles
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /titles:
+    get:
+      summary: List Titles
+      tags:
+        - Titles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: ../models/Title.v1.yaml
+                    - type: object
+                      properties:
+                        n_events:
+                          type: integer
+              examples: {}
+      operationId: get-titles
+    post:
+      summary: Create Title
+      tags:
+        - Titles
+      responses: {}
+      operationId: post-titles
+components:
+  schemas:
+    TitleDetail:
+      title: TitleDetail
+      allOf:
+        - $ref: ../models/Title.v1.yaml
+        - type: object
+          properties:
+            maps:
+              type: array
+              items:
+                $ref: ../models/TitleMap.v1.yaml
+            game_modes:
+              type: array
+              items:
+                $ref: ../models/TitleGameMode.v1.yaml
+            roles:
+              type: array
+              items:
+                $ref: ../models/TitleRole.v1.yaml
+      x-examples: {}
+  examples: {}

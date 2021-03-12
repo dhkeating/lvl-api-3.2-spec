@@ -1,0 +1,14 @@
+title: TitleRole
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+  positions:
+    type: string
+  role_statistics:
+    type: string

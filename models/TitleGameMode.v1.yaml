@@ -1,0 +1,10 @@
+title: TitleGameMode
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string

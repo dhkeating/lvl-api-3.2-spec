@@ -1,0 +1,13 @@
+title: UserListItem
+type: object
+x-tags:
+  - Users
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+  avatar:
+    type: string
+    format: uri
