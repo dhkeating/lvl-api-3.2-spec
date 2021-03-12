@@ -2,20 +2,7 @@ title: Title
 type: object
 x-tags:
   - Titles
-x-examples:
-  example-1:
-    id: 3
-    name: Rocket League
-    short_name: RL
-    genre: SPR
-    icon: 'https://storage.googleapis.com/lvl-gg-media/titles/3/icon/icon.png'
-    card_background: 'https://storage.googleapis.com/lvl-gg-media/titles/3/cardbg/card_background.png'
-    banner: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
-    platforms:
-      - id: 1
-        name: PlayStation 5
-        abbreviation: PS5
-        icon: 'https://storage.googleapis.com/lvl-gg-media/platforms/1/ps4.png'
+x-examples: {}
 properties:
   id:
     type: integer
@@ -50,6 +37,11 @@ properties:
     format: uri
     example: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
   platforms:
+    oneOf:
+      - behavior: Write Only
+        items:
+          type: integer
+      - behavior: Read Only
+        items:
+          $ref: ./Platform.v1.yaml
     type: array
-    items:
-      $ref: ./Platform.v1.yaml

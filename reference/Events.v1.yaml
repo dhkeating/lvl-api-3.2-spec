@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Events
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /events:
+    get:
+      summary: List Events
+      tags:
+        - Events
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: ../models/Event.v1.yaml
+                    - type: object
+                      properties:
+                        organizer:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                            abbreviation:
+                              type: string
+              examples: {}
+      operationId: get-events
+    post:
+      summary: Create Event
+      tags:
+        - Events
+      responses: {}
+      operationId: post-events
+components:
+  schemas: {}
+  examples: {}

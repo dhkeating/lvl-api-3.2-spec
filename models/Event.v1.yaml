@@ -10,7 +10,7 @@ properties:
   name:
     type: string
   organizer:
-    $ref: ./OrganizerListItem.v1.yaml
+    type: integer
   event_type:
     type: string
   status:
@@ -24,8 +24,6 @@ properties:
     minimum: 1
     readOnly: true
   title:
-    $ref: ./Title.v1.yaml
+    type: integer
   platform:
-    $ref: ./Platform.v1.yaml
-  user_context:
-    $ref: ./EventUserContext.v1.yaml
+    type: integer
