@@ -16,23 +16,30 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  allOf:
-                    - $ref: ../models/Event.v1.yaml
-                    - type: object
-                      properties:
-                        organizer:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                            name:
-                              type: string
-                            abbreviation:
-                              type: string
+                $ref: ../models/EventDetail.v1.yaml
               examples: {}
       operationId: get-events
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: title
+        - schema:
+            type: integer
+          in: query
+          name: platform
+        - schema:
+            type: integer
+          in: query
+          name: organizer
+        - schema:
+            type: integer
+          in: query
+          name: status
+        - schema:
+            type: string
+          in: query
+          name: name
     post:
       summary: Create Event
       tags:

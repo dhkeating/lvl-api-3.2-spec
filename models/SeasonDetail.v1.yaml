@@ -1,0 +1,41 @@
+title: SeasonDetail
+x-tags:
+  - Seasons
+allOf:
+  - $ref: ./Season.v1.yaml
+  - type: object
+    properties:
+      season_settings:
+        $ref: ./SeasonSettings.v1.yaml
+      season_scoring_model:
+        $ref: ./SeasonScoringModel.v1.yaml
+      event:
+        $ref: ./EventDetailed.v1.yaml
+  - type: object
+    properties:
+      n_stages:
+        type: integer
+      n_participants:
+        type: integer
+      status:
+        type: string
+      user_context:
+        type: object
+        properties:
+          logged_in:
+            type: boolean
+          lvl_staff:
+            type: boolean
+          event_staff:
+            type: boolean
+          organizer_staff:
+            type: boolean
+          can_register:
+            type: boolean
+          registration_status:
+            type: boolean
+          permissions:
+            type: array
+            items:
+              type: string
+x-examples: {}

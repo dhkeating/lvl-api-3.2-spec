@@ -1,0 +1,38 @@
+type: object
+description: ''
+properties:
+  allow_ot:
+    type: boolean
+  pts_per_match_win:
+    type: string
+    minLength: 1
+  pts_per_match_loss:
+    type: string
+    minLength: 1
+  pts_per_match_tie:
+    type: string
+    minLength: 1
+  pts_per_match_forfeit:
+    type: string
+    minLength: 1
+  pts_per_round_win:
+    type: string
+    minLength: 1
+  pts_per_round_loss:
+    type: string
+    minLength: 1
+  pts_per_round_tie:
+    type: string
+    minLength: 1
+  pts_per_round_forfeit:
+    type: string
+    minLength: 1
+  pts_per_round_win_ot:
+    type: string
+    minLength: 1
+  pts_per_round_loss_ot:
+    type: string
+    minLength: 1
+  pts_per_score:
+    type: string
+    minLength: 1

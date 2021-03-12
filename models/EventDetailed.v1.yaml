@@ -1,0 +1,20 @@
+title: EventDetail
+x-tags:
+  - Events
+allOf:
+  - $ref: ./Event.v1.yaml
+  - type: object
+    properties:
+      organizer:
+        $ref: ./OrganizerListItem.v1.yaml
+      title:
+        $ref: ./Title.v1.yaml
+      platform:
+        $ref: ./Platform.v1.yaml
+  - type: object
+    properties:
+      status:
+        type: string
+      n_seasons:
+        type: integer
+x-examples: {}

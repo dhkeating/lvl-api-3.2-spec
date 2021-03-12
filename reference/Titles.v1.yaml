@@ -18,12 +18,8 @@ paths:
               schema:
                 type: array
                 items:
-                  allOf:
-                    - $ref: ../models/Title.v1.yaml
-                    - type: object
-                      properties:
-                        n_events:
-                          type: integer
+                  $ref: ../models/Title.v1.yaml
+                readOnly: true
               examples: {}
       operationId: get-titles
     post:
@@ -32,21 +28,64 @@ paths:
         - Titles
       responses: {}
       operationId: post-titles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Title.v1.yaml
+            examples:
+              example-1:
+                value:
+                  id: 3
+                  name: Rocket League
+                  short_name: RL
+                  genre: SPR
+                  icon: 'https://storage.googleapis.com/lvl-gg-media/titles/3/icon/icon.png'
+                  card_background: 'https://storage.googleapis.com/lvl-gg-media/titles/3/cardbg/card_background.png'
+                  banner: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
+                  platforms:
+                    - 0
   '/titles/{title_id}':
     parameters:
-      - schema:
-          type: string
-        name: title_id
-        in: path
-        required: true
+      - $ref: '#/components/parameters/title_id'
     get:
       summary: Retrieve Title
       tags:
         - Titles
+      operationId: get-titles-title_id
       responses:
         '200':
-          $ref: '#/components/responses/RetrieveTitleResponse'
-      operationId: get-titles-title_id
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: ../models/Title.v1.yaml
+                  - type: object
+                    properties:
+                      game_modes:
+                        type: array
+                        items:
+                          $ref: ../models/TitleGameMode.v1.yaml
+                      maps:
+                        $ref: ../models/TitleMap.v1.yaml
+                      roles:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: ../models/TitleRole.v1.yaml
+                            - type: object
+                              properties:
+                                positions:
+                                  type: array
+                                  items:
+                                    $ref: ../models/TitlePosition.v1.yaml
+                                role_statistics:
+                                  type: array
+                                  items:
+                                    $ref: ../models/TitleStatistic.v1.yaml
+              examples: {}
+      parameters: []
     patch:
       summary: Update Title
       tags:
@@ -63,58 +102,12 @@ components:
   schemas: {}
   examples: {}
   securitySchemes: {}
-  responses:
-    RetrieveTitleResponse:
-      description: Example response
-      content:
-        application/json:
-          schema:
-            allOf:
-              - $ref: ../models/Title.v1.yaml
-              - type: object
-                properties:
-                  platforms:
-                    type: array
-                    items:
-                      $ref: ../models/Platform.v1.yaml
-                  game_modes:
-                    type: array
-                    items:
-                      $ref: ../models/TitleGameMode.v1.yaml
-                  maps:
-                    type: array
-                    items:
-                      $ref: ../models/TitleMap.v1.yaml
-                  roles:
-                    type: array
-                    items:
-                      $ref: ../models/TitleRole.v1.yaml
-                  n_events:
-                    type: integer
-          examples:
-            example-1:
-              value:
-                id: 3
-                name: Rocket League
-                short_name: RL
-                genre: SPR
-                icon: 'https://storage.googleapis.com/lvl-gg-media/titles/3/icon/icon.png'
-                card_background: 'https://storage.googleapis.com/lvl-gg-media/titles/3/cardbg/card_background.png'
-                banner: 'https://storage.googleapis.com/lvl-gg-media/titles/3/banner/banner.png'
-                platforms:
-                  - id: 1
-                    name: PlayStation 5
-                    abbreviation: PS5
-                    icon: 'https://storage.googleapis.com/lvl-gg-media/platforms/1/ps4.png'
-                game_modes:
-                  - id: 1
-                    name: string
-                maps:
-                  - id: 1
-                    name: string
-                roles:
-                  - id: 1
-                    name: string
-                    positions: string
-                    role_statistics: string
-                n_events: 0
+  responses: {}
+  parameters:
+    title_id:
+      name: title_id
+      in: path
+      required: true
+      schema:
+        type: integer
+      description: Title ID

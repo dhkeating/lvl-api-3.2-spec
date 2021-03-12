@@ -1,10 +1,11 @@
-title: TitleRole
+title: EventMinimal
 type: object
 x-tags:
-  - Titles
+  - Events
 properties:
   id:
     type: integer
-    minimum: 1
   name:
+    type: string
+  '':
     type: string

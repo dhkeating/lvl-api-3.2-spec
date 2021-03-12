@@ -1,0 +1,35 @@
+title: Season
+type: object
+x-tags:
+  - Seasons
+x-examples: {}
+properties:
+  id:
+    type: integer
+    readOnly: true
+  event:
+    type: integer
+  season_number:
+    type: integer
+  participant_capacity:
+    type: integer
+  roster_size:
+    type: integer
+  max_roster_size:
+    type: integer
+  registration_start:
+    type: string
+    format: date-time
+  registration_end:
+    type: string
+    format: date-time
+  season_start:
+    type: string
+    format: date-time
+  season_end:
+    type: string
+    format: date-time
+  rules:
+    type: string
+  prizes:
+    type: string

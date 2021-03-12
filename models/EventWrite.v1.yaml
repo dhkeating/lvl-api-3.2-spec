@@ -1,0 +1,45 @@
+title: Event
+type: object
+x-tags:
+  - Events
+x-examples:
+  example-1:
+    id: 1
+    name: Example Event Name
+    event_type: ST
+    region: GL
+    description: An example event descriptioin...
+    title: 0
+    platform: 0
+    organizer: 0
+    owner: 0
+properties:
+  name:
+    type: string
+    example: Example Event Name
+  event_type:
+    type: string
+    enum:
+      - ST
+      - IN
+      - DR
+  region:
+    type: string
+    enum:
+      - GL
+      - NA
+      - SA
+      - EU
+      - AS
+      - OC
+  description:
+    type: string
+    example: An example event descriptioin...
+  title:
+    type: integer
+  platform:
+    type: integer
+  organizer:
+    type: integer
+  owner:
+    type: integer

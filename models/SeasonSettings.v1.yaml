@@ -1,0 +1,20 @@
+description: ''
+type: object
+properties:
+  registration_open:
+    type: boolean
+    description: Are registrations open
+  auto_accept_registrations:
+    type: boolean
+  allow_roster_changes:
+    type: boolean
+  allow_score_submission:
+    type: boolean
+  allow_stat_submission:
+    type: boolean
+  allow_match_time_changes:
+    type: boolean
+  allow_media_submission:
+    type: boolean
+  track_statistics:
+    type: boolean
